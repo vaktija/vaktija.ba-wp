@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Vaktija.ba.Pages.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vaktija.ba.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="Compass_Btn" Visibility="Visible" Icon="Map" Click="Compass_Btn_Click" Label="Kibla Kompas"/>
+                <AppBarButton x:Name="Calendar_Btn" Icon="Calendar" Click="Calendar_Btn_Click" Label="Kalendar"/>
+            </CommandBar.PrimaryCommands>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="Rate_Btn" Click="Rate_Btn_Click" Label="Ocijeni aplikaciju" Icon="Emoji2"/>
+                <AppBarButton x:Name="Share_Btn" Click="Share_Btn_Click" Label="Podijeli vremena" Icon="ReShare"/>
+                <AppBarButton x:Name="Settings_Btn" Icon="Setting" Click="Settings_Btn_Click" Label="Postavke"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        <Grid x:Name="header_Grid" Grid.Row="0">
+        </Grid>
+        <Grid x:Name="main_Grid" Grid.Row="1">
+            </Grid>
+            <Grid x:Name="calendar_Grid" HorizontalAlignment="Stretch" Visibility="Visible" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Grid.Row="1">
+                <Grid.RenderTransform>
+                    <CompositeTransform x:Name="calendarCT" TranslateY="1000"/>
+                </Grid.RenderTransform>
+            </Grid>
+            <Grid x:Name="footer_Grid" Grid.Row="2">
+            </Grid>
+        <ProgressRing x:Name="loader" Grid.Row="1" Width="80" Height="80" IsActive="False" Background="Transparent"/>
+    </Grid>
+</Page>
